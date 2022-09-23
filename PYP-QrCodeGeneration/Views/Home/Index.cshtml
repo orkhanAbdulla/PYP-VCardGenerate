@@ -1,0 +1,22 @@
+﻿@model List<VCard>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    @foreach (VCard vCard in Model)
+    {
+        <div class="col-3 py-2">
+            <div class="card">
+                <img src="@vCard.QrCode" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5>@vCard.Firstname @vCard.Surname</h5>
+                    <a href="mailto:@(vCard.Email)">@vCard.Email</a>
+                    <p class="card-text">
+                        Phone: @vCard.Phone
+                    </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
